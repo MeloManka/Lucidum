@@ -1,0 +1,25 @@
+{
+  "plugins": [
+    "node_modules/jsdoc/plugins/markdown"
+  ],
+  "source": {
+    "include": [
+      "./index.js",
+      "./models",
+      "./controllers",
+      "./routes"
+    ],
+    "includePattern": ".+\\.js?$"
+  },
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": true
+  },
+  "opts": {
+    "template": "",
+    "encoding": "utf8",
+    "destination": "./docs/code/backend",
+    "recurse": "directives services",
+    "tutorials": "./config/tutorials/"
+  }
+}

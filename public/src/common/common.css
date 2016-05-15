@@ -1,0 +1,18 @@
+/* Common styles for Admin app*/
+
+.wrapper-flex {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    &.__center {
+        justify-content: center;
+    }
+    &.__middle {
+        align-items: center;
+    }
+}
+
+.__center-text {
+    text-align: center;
+}
+

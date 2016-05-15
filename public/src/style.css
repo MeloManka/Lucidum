@@ -1,0 +1,10 @@
+/* Custom stules for Admin app */
+
+html,
+body,
+.ui-view {
+    height: 100%;
+}
+
+
+

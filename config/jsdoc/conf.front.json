@@ -1,0 +1,22 @@
+{
+  "plugins": [
+    "node_modules/jsdoc/plugins/markdown",
+    "node_modules/angular-jsdoc/common/plugins/ngdoc"
+  ],
+  "source": {
+    "include": [
+      "./public/dist/app.js"
+    ]
+  },
+  "templates": {
+    "cleverLinks": true,
+    "monospaceLinks": true
+  },
+  "opts": {
+    "template": "node_modules/angular-jsdoc/angular-template",
+    "encoding": "utf8",
+    "destination": "./docs/code/frontend",
+    "recurse": "directives services",
+    "tutorials": "./config/tutorials/"
+  }
+}

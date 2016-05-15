@@ -1,0 +1,17 @@
+.wrapper-flex.__center.__middle
+    .wrapper-flex__element
+        h1.__center-text Register as admin
+        form(name="registerForm" aria-label="registerForm").register-form
+            .list
+                label.item.item-input.item-stacked-label
+                    span.input-label Username
+                    input(type='text', placeholder='Username', name='username', ng-model="ctrl.username")
+                label.item.item-input.item-stacked-label
+                    span.input-label Password
+                    input(type='password', placeholder='Password', name="password", ng-model="ctrl.password")
+                label.item.item-input.item-stacked-label
+                    span.input-label Repeat password
+                    input(type='password', placeholder='Password', name="password2", ng-model="ctrl.password2")
+                button.button.button-full.button-balanced(ng-class="{}", ng-click="ctrl.registration()" ng-disabled="!ctrl.isValidFormRegister()") Register
+        .__center-text
+            a(ui-sref="landing") Go back to the landing page
