@@ -1,4 +1,12 @@
-div HELLO ADMIN!
-a(ui-sref="login") Login
-br
-a(ui-sref="register") Registration
+div(class="wrapper_land" flex="100" layout="row" layout-align="center center")
+    div(flex="100" layout="column" layout-align="center center" class="wrap-landing")
+        div(class="landing__title")
+            span(class="landing__title_l") L
+            span(class="landing__title_u") U
+            span(class="landing__title_c") C
+            span(class="landing__title_i") I
+            span(class="landing__title_d") D
+            span(class="landing__title_u") U
+            span(class="landing__title_m") M
+        md-button(ui-sref="login" class="landing__button landing__button_login") Login
+        md-button(ui-sref="register" class="landing__button landing__button_registration") Registration

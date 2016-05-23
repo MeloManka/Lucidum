@@ -14,6 +14,8 @@ export default angular.module('app', [
         'ui.router',
         'ngCookies',
         'ngStorage',
+        'ngMaterial',
+        'ngMdIcons',
         landing.name
     ])
     .service('authService', AuthService)
@@ -36,17 +38,22 @@ export default angular.module('app', [
         $httpProvider.interceptors.push(interceptor);
         $locationProvider.html5Mode(true);
     })
-    .run(function ($rootScope, $state, authService) {
+    .run(function ($rootScope, $state, authService,cookiesService) {
         $rootScope.$on('$stateChangeStart', function (event, stateInfo, current) {
             if (stateInfo.name != 'landing' && stateInfo.name != 'login' && stateInfo.name != 'register') {
-                authService.isAuth()
-                    .then(() => {
+                if(stateInfo.name.search('admin') == 0 && cookiesService.get('type') != 'admin'){
+                    event.preventDefault();
+                    $state.go('landing');
+                } else {
+                    authService.isAuth()
+                        .then(() => {
 
-                    })
-                    .catch(() => {
-                        event.preventDefault();
-                        $state.go('landing');
-                    });
+                        })
+                        .catch(() => {
+                            event.preventDefault();
+                            $state.go('landing');
+                        });
+                }
             }
         });
     });

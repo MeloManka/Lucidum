@@ -47,7 +47,14 @@ var server = http.createServer(app).listen(port, function () {
 	console.log('Express server listening on port ' + port);
 });
 
+
+
+/*server.on('connection', function(sock){
+	sock.write("2 3 4 ");
+})*/
+
 var io = require('socket.io').listen(server);
 global.io = io;
 
 module.exports = app;
+

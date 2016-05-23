@@ -3,7 +3,7 @@
 export default class RegisterAPIService {
     constructor($http) {
         this.HTTP = $http;
-        this.urlBase = '/api/admin';
+        this.urlBase = '/api';
     }
     register(username, password) {
         return this.HTTP.post(this.urlBase + '/registration', {

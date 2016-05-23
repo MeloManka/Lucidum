@@ -1,0 +1,14 @@
+/* Register form styles for Admin app */
+
+@import '../../../../common/variable.css';
+
+.square{
+    height: 100px;
+    width: 100px;
+    &.__active{
+        background-color: yellow;
+    }
+    &.__unactive{
+        background-color: grey;
+    }
+}

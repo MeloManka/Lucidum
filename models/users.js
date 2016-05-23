@@ -17,25 +17,22 @@ var schema = new Schema({
         type: String,
         required: true
     },
-    resetPasswordToken: {
-        type: String
-    },
-    resetPasswordExpires: {
-        type: String
-    },
     type: {
         type: String,
         required: true,
-        default: 'admin'
+        default: 'user'
     },
-    caseId: {
+    firstName: {
         type: String
     },
-    info: {
-        type: Object
+    lastName: {
+        type: String
     },
-    settings: {
-        type: Object
+    phoneNumber: {
+        type: String
+    },
+    schemes: {
+        type: Array
     }
 });
 

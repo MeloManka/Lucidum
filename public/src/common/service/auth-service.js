@@ -10,6 +10,7 @@ export default class AuthService {
 
     isTokenValid() {
         var token = this.cookies.get('token');
+        console.log('token = ',token);
         return this.HTTP.get(this.urlBase + '/auth/' + token);
     }
 

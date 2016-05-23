@@ -1,17 +1,17 @@
-.wrapper-flex.__center.__middle
-    .wrapper-flex__element
-        h1.__center-text Register as admin
-        form(name="registerForm" aria-label="registerForm").register-form
-            .list
-                label.item.item-input.item-stacked-label
-                    span.input-label Username
-                    input(type='text', placeholder='Username', name='username', ng-model="ctrl.username")
-                label.item.item-input.item-stacked-label
-                    span.input-label Password
-                    input(type='password', placeholder='Password', name="password", ng-model="ctrl.password")
-                label.item.item-input.item-stacked-label
-                    span.input-label Repeat password
-                    input(type='password', placeholder='Password', name="password2", ng-model="ctrl.password2")
-                button.button.button-full.button-balanced(ng-class="{}", ng-click="ctrl.registration()" ng-disabled="!ctrl.isValidFormRegister()") Register
-        .__center-text
-            a(ui-sref="landing") Go back to the landing page
+div(class="wrapper_reg" flex="100" layout="row" layout-align="center center")
+    form(flex="50" flex-sm="80" layout="column" layout-align="center center" class="wrap-register")
+        h2 Registration
+        md-input-container(class="md-block register__container")
+            label Username
+            input(type='text', name='username',ng-model="ctrl.username", ng-change="ctrl.error = ''")
+        md-input-container(class="md-block register__container")
+            label Password
+            input(type='password', name="password", ng-model="ctrl.password", ng-change="ctrl.error = ''")
+        md-input-container(class="md-block register__container")
+            label Repeat password
+            input(type='password', name="password2", ng-model="ctrl.password2", ng-change="ctrl.error = ''")
+        md-button(class="md-raised register__button" ng-class="{'md-primary':!ctrl.isValidFormReg()}" ng-click="ctrl.registration()" ng-disabled="!ctrl.isValidFormReg()") Registration
+        a(ui-sref="landing" class="register__text") Go back to the landing page
+        div(class="md-warn register__text_error") {{ctrl.error}}
+    div(layout="row" ng-show="ctrl.loader" layout-sm="column" layout-align="center center" class="background-loader")
+        md-progress-linear(class="loader__linear" md-mode="indeterminate")

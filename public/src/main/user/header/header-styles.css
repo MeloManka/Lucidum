@@ -1,0 +1,40 @@
+.header__menu{
+    height: 50px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    width: 50px;
+    border-radius: 60px;
+    margin: 10px 10px 0 0;
+    &:hover{
+        box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.51);
+}
+}
+.header__logo{
+    margin: 10px 0 0 10px;
+    font-size: 30px;
+}
+.header__menu_button{
+    min-height: 100%;
+    margin: 0;
+    padding: 7px 0 0;
+    min-width: 100%;
+    position: static;
+}
+.menu__button_icon{
+    margin-top: 10px;
+}
+.header__menu_content{
+    margin: 0;
+    padding: 0;
+}
+.header__menu_item{
+    box-sizing: border-box;
+    padding-left: 20px;
+    height: 100%;
+    width: 100%;
+    &:hover{
+        cursor: pointer;
+        background-color: #dddddd;
+    }
+}

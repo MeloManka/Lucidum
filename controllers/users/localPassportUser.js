@@ -43,7 +43,7 @@ function loginUser(req, res, next) {
                 req.logIn(user, function (err) {
                     if (err) return next(err);
                     var token = Token.generateToken(req,user);
-                    res.status(200).send(token);
+                    res.status(200).send({token: token, type: user.type});
                 })
             } else {
                 res.status(400).send(info);

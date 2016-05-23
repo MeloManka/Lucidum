@@ -1,0 +1,11 @@
+/* Main form styles for Admin app */
+
+@import '../common/variable.css';
+
+.wrapper_log{
+    width: 100%;
+    height: 100%;
+}
+.main__content{
+    padding: 20px;
+}

@@ -1,18 +1,17 @@
 /* Common styles for Admin app*/
 
-.wrapper-flex {
-    display: flex;
-    width: 100%;
+@import '../common/variable.css';
+
+.background-loader{
+    position: fixed;
     height: 100%;
-    &.__center {
-        justify-content: center;
-    }
-    &.__middle {
-        align-items: center;
-    }
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: $grey;
+    z-index: 30;
 }
-
-.__center-text {
-    text-align: center;
+.loader__linear{
+    z-index: 30;
+    width: 40%;
 }
-

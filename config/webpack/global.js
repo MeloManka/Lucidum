@@ -8,17 +8,18 @@ var precss = require('precss');
 var autoprefixer = require('autoprefixer');
 var stylefmt = require('stylefmt');
 
-module.exports = function(_path) {
+module.exports = function (_path) {
     return {
         entry: {
             vendor: [
                 "./node_modules/angular/angular.js",
-                "./node_modules/angular-ui-router/release/angular.ui.router.min.js",
+                "./node_modules/angular-ui-router/release/angular-ui-router.min.js",
                 "./node_modules/angular-aria/angular-aria.js",
                 "./node_modules/angular-animate/angular-animate.js",
                 "./node_modules/angular-material/angular-material.js",
                 "./node_modules/ngstorage/ngStorage.min.js",
-                "./node_modules/angular-cookies/angular-cookies.min.js"
+                "./node_modules/angular-cookies/angular-cookies.min.js",
+                "./node_modules/angular-material-icons/angular-material-icons.min.js"
             ],
             app: './public/src/index'
         },
@@ -33,9 +34,6 @@ module.exports = function(_path) {
             filename: 'app.js'
         },
         module: {
-            preLoaders: [
-                { test: /\.js$/, loader: 'eslint-loader', exclude: /node_modules|vendor/ }
-            ],
             loaders: [{
                 test: /\.js$/,
                 exclude: /node_modules/,
@@ -51,23 +49,23 @@ module.exports = function(_path) {
                 test: /\.jade$/,
                 loader: 'jade'
             }, {
+                test: /\.(woff|eot|ttf|svg|otf)$/,
+                loader: 'file-loader?name=fonts/[name].[ext]'
+            }, {
+                test: /\.(jpeg|jpg|png)$/,
+                loader: 'file-loader?name=images/[name].[ext]'
+            }, {
                 test: /\.css$/,
                 exclude: /node_modules/,
                 loader: ExtractTextPlugin.extract(
                     'style-loader',
                     'css-loader!postcss-loader'
                 )
-            }, {
-                test: /\.(otf|eot|svg|ttf|woff)/,
-                loader: 'url-loader?limit=8192'
             }]
         },
         plugins: [
             new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js'),
             new ExtractTextPlugin('index.css'),
-            // new styleLintPlugin({
-            //     files: ['**/style.css']
-            // }),
             new HtmlPlugin({
                 title: 'Test APP',
                 chunks: ['app', 'vendor'],
@@ -75,7 +73,7 @@ module.exports = function(_path) {
                 template: path.join(_path, 'public', 'src', 'layout.jade')
             })
         ],
-        postcss: function() {
+        postcss: function () {
             return [precss, stylefmt, autoprefixer];
         }
     };

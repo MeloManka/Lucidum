@@ -1,6 +1,21 @@
 /* Login form styles for Admin app */
+@import '../common/variable.css';
 
-.login-form {
-    width: 400px;
+.wrapper_log{
+    width: 100%;
+    height: 100%;
 }
 
+.login__container{
+    margin: 10px 0;
+    width: 40%;
+}
+.login__button{
+    width: 40%;
+}
+.login__text{
+    margin-top: 20px;
+    &_error{
+        color: $red;
+}
+}
