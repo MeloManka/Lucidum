@@ -21,5 +21,3 @@ import './main/admin/views/schema/schema-styles.css';
 import './main/admin/views/auction/auction-styles.css';
 import './main/admin/views/participate/participate-styles.css';
 import './main/admin/views/profile/profile-styles.css';
-
-import './schemes/schema1/schema1-styles.css';

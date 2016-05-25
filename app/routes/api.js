@@ -50,13 +50,15 @@ router.get('/auctions', function (req, res, next) {
 
 });
 router.post('/send', function (req, res, next) {
-    console.log('req = ',req.body);
-    var num = req.body.num;
-    console.log('num = ',req.body.num);
-    var prog1 = '1 3 ';
-    var prog2 = '10 0 1 1 0 0 0 0 0 0 0 ';
-    socket.write(prog2);
-    res.send('ok');
+    var programm = req.body.programm;
+    console.log(programm);
+    if(socket){
+        socket.write(programm);
+        res.send('ok');
+    } else {
+        res.status(400).send('arduino not connect');
+    }
+
 });
 
 module.exports = router;

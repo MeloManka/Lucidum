@@ -21,10 +21,10 @@ export default class SchemaCtrl {
         this.type = '';
         this.typeSchema = [
             {name: 'Существующие', value: 'exist'},
-            {name: 'Создать статичную', value: 'manually'},
-            {name: 'Создать динамическую', value: 'animation'}
+            {name: 'Создать статичную', value: 'manually'}
         ];
-        this.numberProgramm = 0;
+        this.numberDemoSchema = 0;
+        this.sendSchema = false;
     }
     saveSchema(){
         this.api.save(this.schema)
@@ -32,8 +32,31 @@ export default class SchemaCtrl {
             .catch()
     }
     send(){
-        this.api.send(this.numberProgramm)
-            .then()
+        let programm = '10 ';
+        for(let i = 0; i < this.schema.length; ++i){
+            let state = +this.schema[i].state + ' ';
+            programm = programm + state;
+        }
+        this.api.send(programm)
+            .then(() => {
+                this.sendSchema = true;
+            })
+            .catch()
+    }
+    sendDemo(){
+        let programm = '1 ' + this.numberDemoSchema + ' ';
+        this.api.send(programm)
+            .then(() => {
+                this.sendSchema = true;
+            })
+            .catch()
+    }
+    sendStop(){
+        let programm = '1 0 ';
+        this.api.send(programm)
+            .then(() => {
+                this.sendSchema = false;
+            })
             .catch()
     }
 }

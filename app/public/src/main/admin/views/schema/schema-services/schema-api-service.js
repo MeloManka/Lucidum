@@ -5,9 +5,9 @@ export default class SchemaAPIService {
         this.HTTP = $http;
         this.urlBase = '/api';
     }
-    send(numberProgramm) {
+    send(programm) {
         return this.HTTP.post(this.urlBase + '/send', {
-            num: numberProgramm
+            programm: programm
         });
     }
 }

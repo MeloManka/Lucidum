@@ -1,19 +1,30 @@
-div(flex="100" layout="column" layout-align="center center")
-    div На этой странице вы можете увидеть какие схемы возможны для задания
-    div(flex="100" layout="row")
-        md-input-container(flex="100")
-            label Тип схемы
-            md-select(ng-model="ctrl.type")
-                md-option(ng-repeat="type in ctrl.typeSchema" value="{{type.value}}") {{type.name}}
-    div(ng-if="ctrl.type == 'manually'" layout="row" layout-align="center center")
-        div(flex="70" layout="row" layout-align="center center" layout-wrap)
-            div(flex="15" flex-xs="45" layout="row" layout-margin ng-repeat="cell in ctrl.schema" class="square" ng-class="{__active:cell.state,__unactive:!cell.state}" ng-click="cell.state = !cell.state") {{cell.name}}
-        md-button(ng-click="ctrl.saveSchema()") Запомнить схему
-    div(ng-if="ctrl.type == 'exist'" layout="column")
+div(flex="100" layout="column" layout-align="center center" class="schema")
+    div На этой странице вы можете увидеть какие схемы возможны для задания.
+    div Выберите нужный вам тип
+    md-input-container(flex="100" class="schema__type")
+        label Тип схемы
+        md-select(ng-model="ctrl.type")
+            md-option(ng-repeat="type in ctrl.typeSchema" value="{{type.value}}") {{type.name}}
+    div(ng-if="ctrl.type == 'exist'" layout="column" layout-align="center center")
+        div Выберите схему, которая уже создана по умолчанию
         md-input-container
-            label Номер программы
-            input(ng-model="ctrl.numberProgramm")
-        md-button(ng-click="ctrl.send()") Отправить программу
-    div(ng-if="ctrl.type == 'animate'") ANIMATE
-    schema-directive
+            md-select(ng-model="ctrl.numberDemoSchema")
+                md-option(ng-repeat="number in [1,2,3,4]" value="{{number}}") {{number}}
+        div(ng-if="ctrl.numberDemoSchema != 0" layout="column")
+            div(layout="row" layout-align="center center")
+                div(flex="70" layout="row" layout-align="center center" layout-wrap)
+                    div(flex="15" flex-xs="45" layout="row" layout-margin ng-repeat="cell in [0,1,2,3,4,5,6,7,8,9]" ng-class="{schemes__light1: ctrl.numberDemoSchema == 1, schemes__light2: ctrl.numberDemoSchema == 2,schemes__light3: ctrl.numberDemoSchema == 3,schemes__light4: ctrl.numberDemoSchema == 4}")
+            div(layout="row" layout-align="center center")
+                md-button(flex="30" ng-click="ctrl.sendDemo()") Отправить анимацию
+            div(ng-if="ctrl.sendSchema" layout="row" layout-align="center center")
+                md-button(flex="30" ng-click="ctrl.sendStop()") Остановить анимацию схемы контроллера
+    div(ng-if="ctrl.type == 'manually'" layout="column")
+        div(layout="row" layout-align="center center")
+            div(flex="70" layout="row" layout-align="center center" layout-wrap)
+                div(flex="15" flex-xs="45" layout="row" layout-margin ng-repeat="cell in ctrl.schema" class="schema__manually_cell" ng-class="{__active:cell.state,__unactive:!cell.state}" ng-click="cell.state = !cell.state") {{cell.name}}
+        div(layout="row" layout-align="center center")
+            md-button(flex="30" ng-click="ctrl.send()") Отправить узор
+        div(ng-if="ctrl.sendSchema" layout="row" layout-align="center center")
+            md-button(flex="30" ng-click="ctrl.sendStop()") Остановить анимацию схемы контроллера
+
 
