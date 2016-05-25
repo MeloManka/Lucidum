@@ -1,0 +1,19 @@
+div(flex="100" layout="column" layout-align="center center")
+    div На этой странице вы можете увидеть какие схемы возможны для задания
+    div(flex="100" layout="row")
+        md-input-container(flex="100")
+            label Тип схемы
+            md-select(ng-model="ctrl.type")
+                md-option(ng-repeat="type in ctrl.typeSchema" value="{{type.value}}") {{type.name}}
+    div(ng-if="ctrl.type == 'manually'" layout="row" layout-align="center center")
+        div(flex="70" layout="row" layout-align="center center" layout-wrap)
+            div(flex="15" flex-xs="45" layout="row" layout-margin ng-repeat="cell in ctrl.schema" class="square" ng-class="{__active:cell.state,__unactive:!cell.state}" ng-click="cell.state = !cell.state") {{cell.name}}
+        md-button(ng-click="ctrl.saveSchema()") Запомнить схему
+    div(ng-if="ctrl.type == 'exist'" layout="column")
+        md-input-container
+            label Номер программы
+            input(ng-model="ctrl.numberProgramm")
+        md-button(ng-click="ctrl.send()") Отправить программу
+    div(ng-if="ctrl.type == 'animate'") ANIMATE
+    schema-directive
+

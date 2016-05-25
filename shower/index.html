@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Shower Presentation Engine</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+</head>
+<body class="shower list">
+	<header class="caption">
+		<h1>Взаимодействие Web-приложения и контроллера Arduino с использованием WIFI Shield СС3000</h1>
+		<p>Подготовила Головчик Ксения 4 курс 2 группа</p>
+	</header>
+	<section class="slide" id="cover1">
+		<h2>Взаимодействие Web-приложения и контроллера Arduino с использованием WIFI Shield СС3000</h2>
+		<p>Подготовила:</p>
+		<p>Головчик Ксения</p>
+		<p>студентка 4 курса 2 группы</p>
+		<br/>
+		<p>Научный руководитель:</p>
+		<p>Суздаль Станислав Валерьевич</p>
+		<style>
+			#cover1 h2 {
+				margin:10px 0 0 0;
+				text-align:center;
+				font-size:50px;
+				}
+			#cover1 p {
+				margin:0px 0 0 0;
+				text-align:right;
+				font-style:italic;
+				font-size:20px;
+				}
+		</style>
+	</section>
+	<section class="slide" id="cover2">
+		<h2>Цель: </h2>
+		<p>Создать удобное веб-приложение для взаимодействия с контроллером Arduino, который управляет светодиодами, зажигая их в заданной последовательности.</p>
+		<h2>Задачи: </h2>
+		<ol>
+			<li>Выяснить какие веб-технологии востребованы на данный момент</li>
+			<li>Понять принцип их работы и применение на реальном проекте</li>
+			<li>Понять принцип работы контроллера Arduino</li>
+			<li>Взаимодействовать с Arduino используя определённые программы и технологии</li>
+			<li>Выяснить и применить на практике каким образом может происходить взаимодействие между веб-приложением и контроллером</li>
+		</ol>
+		<style>
+			#cover2 {
+				padding: 20px 50px;
+			}
+			#cover p {
+				margin:0px 0 0 0;
+				text-align:right;
+				font-style:italic;
+				font-size:20px;
+			}
+		</style>
+	</section>
+	<section class="slide" id="cover3">
+		<h2>Схема взаимодействия частей приложения</h2>
+		<div id="img1"></div>
+		<style>
+			#cover3 {
+				padding: 20px 50px;
+			}
+			#img1 {
+				display: block;
+				height: 90%;
+				width: 90%;
+				background: url("./pictures/Schema.png") no-repeat;
+				background-size: contain;
+				margin-left: 10%;
+			}
+		</style>
+	</section>
+	<section class="slide" id="cover4">
+		<h2>Технологии web-приложения клиент</h2>
+		<ol>
+			<li>SPA</li>
+			<li>Webpack</li>
+			<li>ES6</li>
+			<li>Angular JS</li>
+		</ol>
+	</section>
+	<section class="slide" id="cover5">
+		<h2>SPA</h2>
+		<p>сокращенно SPA, что означает “приложение одной страницы”. Другими словами SPA – это web-приложение, размещенное на одной страницу, которая передаётся на сторону клиента и загружает весь необходимый код с загрузкой страницы.</p>
+		<div id="img5"></div>
+		<style>
+			#cover5 {
+				padding: 50px 50px;
+			}
+			#img5 {
+				display: block;
+				height: 40%;
+				width: 90%;
+				background: url("./pictures/SPA.png") no-repeat;
+				background-size: contain;
+				margin-left: 25%;
+			}
+		</style>
+	</section>
+	<section class="slide" id="cover6">
+		<img src="pictures/webpack.png" alt="Shower logo">
+		<h2>Webpack</h2>
+		<p>один из самых мощных и гибких инструментов для сборки frontend.</p>
+		<div id="img6"></div>
+		<style>
+			#cover6 {
+				padding: 50px 50px;
+			}
+			#cover6 h2 {
+				font-size:60px;
+				display: inline-block;
+			}
+			#cover6 img {
+				width:50px;
+				height:50px;
+			}
+			#img6 {
+				display: block;
+				height: 70%;
+				width: 90%;
+				background: url("./pictures/what-is-webpack.png") no-repeat;
+				background-size: cover;
+				margin-left: 5%;
+			}
+		</style>
+	</section>
+	<section class="slide" id="cover7">
+		<h2>ES6</h2>
+		<p>язык программирования, используемый в качестве основы для построения других скриптовых языков.</p>
+		<ol>
+			<li>
+				let вместо var
+				<code>let x = 1;</code>
+			</li>
+			<li>
+				Строковые шаблоны вместо конкатенации<br>
+				<code>let str = `Hello, ${name}`;</code>
+			</li>
+			<li>
+				Классы вместо прототипов<br>
+				<pre>
+					<code>	class{</code>
+					<code>		constructor(){}</code>
+					<code>		method(){}}</code>
+				</pre>
+			</li>
+			<li>
+				Экспорт<br>
+				<code>export function(){};</code>
+			</li>
+			<li>
+				Импорт<br>
+				<code>import {fun} from "./lib";</code>
+			</li>
+		</ol>
+		<style>
+			#cover7 {
+				padding: 50px 50px;
+			}
+			#cover7 h2 {
+				font-size:50px;
+			}
+			#cover7 p {
+				font-size:20px;
+				margin: 0;
+				padding: 0;
+			}
+			#cover7 li {
+				font-size:20px;
+			}
+		</style>
+	</section>
+	<section class="slide" id="cover8">
+		<img src="pictures/angular.png" alt="Shower logo">
+		<h2>Angular</h2>
+		<p>javascript-фреймворк разработанный компанией Google. Angular построен на принципах MVVM, т.е. при изменениях в модели, изменяется и представление.</p>
+		<style>
+			#cover8 {
+				padding: 150px 100px;
+			}
+			#cover8 h2 {
+				font-size:60px;
+				display: inline-block;
+			}
+			#cover8 img {
+				width:50px;
+				height:50px;
+			}
+		</style>
+	</section>
+	<section class="slide" id="cover4">
+		<h2>Технологии web-приложения сервер</h2>
+		<ol>
+			<li>Express JS</li>
+			<li>MongoDB</li>
+		</ol>
+	</section>
+	<section class="slide" id="cover9">
+		<h2>Разработка на стороне контроллера</h2>
+		<h2 class="title">Контроллер Arduino UNO</h2>
+		<p>это небольшая плата с собственным процессором и памятью. Arduino Uno — это базовый контроллер семейства Arduino, идеально подходящий для решения большинства задач. У него есть 14 контактов, которые могут служить и входами, и выходами, serial-интерфейс для подключения к компьютеру, USB-порт. Для более специфических задач могут подойти другие платы.</p>
+		<style>
+			#cover9 {
+				padding: 50px 50px;
+			}
+			#cover9 h2 {
+				font-size:60px;
+				display: inline-block;
+			}
+			#cover9 h2.title {
+				font-size:50px;
+				display: inline-block;
+			}
+			#cover9 img {
+				width:50px;
+				height:50px;
+			}
+		</style>
+	</section>
+	<section class="slide" id="cover91">
+		<div id="img91"></div>
+		<style>
+			#cover91 {
+				padding: 50px 50px;
+			}
+			#cover91 img {
+				width:50px;
+				height:50px;
+			}
+			#img91 {
+				display: block;
+				height: 90%;
+				width: 90%;
+				background: url("./pictures/ArduinoUno_R3_Front.jpg") no-repeat;
+				background-size: cover;
+				margin-left: 5%;
+			}
+		</style>
+	</section>
+	<section class="slide" id="cover10">
+		<h2>WiFi Shield</h2>
+		<p>плата расширения Arduino WiFi позволяет контроллерам Arduino осуществлять сетевое соединение, используя беспроводную сеть.</p>
+		<div id="img10"></div>
+		<style>
+			#cover10 {
+				padding: 50px 50px;
+			}
+			#cover10 h2 {
+				font-size:60px;
+				display: inline-block;
+			}
+			#cover10 img {
+				width:50px;
+				height:50px;
+			}
+			#img10 {
+				display: block;
+				height: 70%;
+				width: 40%;
+				background: url("./pictures/wifishield.jpg") no-repeat;
+				background-size: cover;
+				margin-left: 20%;
+			}
+		</style>
+	</section>
+	<section class="slide" id="cover11">
+		<img src="./pictures/Arduinologo-01.jpg" alt="Shower logo">
+		<h2>Arduino IDE</h2>
+		<p>бесплатная среда разработки в которой происходит написание,компиляция и загрузка программ в микроконтроллер. Данная среда разработки минимально наполнена функционалом, однако этого достаточно, для программирования на Arduino.</p>
+		<style>
+			#cover11 {
+				padding: 150px 100px;
+			}
+			#cover11 h2 {
+				font-size:60px;
+				display: inline-block;
+			}
+			#cover11 img {
+				width:50px;
+				height:50px;
+			}
+		</style>
+	</section>
+	<p class="badge">
+		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
+	</p>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2015 Yours Truly, Famous Inc. -->
+	<!-- Photos by John Carey, fiftyfootshadows.net -->
+</body>
+</html>
