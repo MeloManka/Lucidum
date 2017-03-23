@@ -1,0 +1,23 @@
+{
+  "name": "Lucidum",
+  "version": "2.0.0",
+  "private": true,
+  "apidoc": {
+    "name": "API Lucidum",
+    "description": "apidoc lucidum",
+    "title": "API lucidum"
+  },
+  "scripts": {},
+  "engines": {
+    "node": "^4.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-env": "^1.2.2",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "webpack": "^2.3.1"
+  }
+}
