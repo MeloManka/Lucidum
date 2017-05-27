@@ -1,0 +1,35 @@
+@import '../common/variables';
+
+.wrapper_landing {
+  width: 100%;
+  height: 100%;
+
+  & .landing__title {
+    font-family: Bebas;
+    font-size: 70px;
+    font-weight: bold;
+
+    .title__letter {
+      margin-right: 5px;
+
+      &_l {
+        color: $blue;
+      }
+      &_u {
+        color: $orange;
+      }
+      &_c {
+        color: $red;
+      }
+      &_i {
+        color: $green;
+      }
+      &_d {
+        color: $yellow;
+      }
+      &_m {
+        color: $indigo;
+      }
+    }
+  }
+}
